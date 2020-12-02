@@ -133,3 +133,5 @@ dmypy.json
 
 # Pycharm files
 .idea
+
+backup/

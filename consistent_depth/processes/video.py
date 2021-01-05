@@ -14,17 +14,25 @@ from PIL import Image
 class Frames:
     """
     Class handling images from frames extracted video.
+
+    path use glob style path.
     """
 
     PNG = "png"
     JPG = "jpg"
     JPEG = "jpeg"
+    RAW = "raw"
 
     def __init__(self, path: str, format: str):
-        if format != self.PNG and format != self.JPEG and format != self.JPG:
+        if (
+            format != self.PNG
+            and format != self.JPEG
+            and format != self.JPG
+            and format != self.RAW
+        ):
             raise TypeError("Format frames not usable.")
         self.format = format
-        self.files = glob(path + f".{format}")
+        self.files = sorted(glob(path + f".{format}"))
 
     def get_nb(self):
         return len(self.files)
@@ -115,6 +123,7 @@ class FFMPEG:
             format != Frames.PNG
             and format != Frames.JPEG
             and format != Frames.JPG
+            and format != Frames.RAW
         ):
             raise ValueError('format must be "png" or "jpg"')
         if type(start) is not int:

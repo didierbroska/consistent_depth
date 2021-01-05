@@ -3,7 +3,6 @@
 Entry point for test.
 """
 
-import logging
 
 from consistent_depth.cli import AppEntry
 

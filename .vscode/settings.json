@@ -1,0 +1,12 @@
+{
+    "python.pythonPath": "c:\\Users\\xavie\\AppData\\Local\\pypoetry\\Cache\\virtualenvs\\consistent-depth-jB7Qnlry-py3.8\\Scripts\\python.exe",
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.formatting.provider": "black",
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true,
+}

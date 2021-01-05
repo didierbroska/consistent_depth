@@ -98,3 +98,11 @@ def test_ffmpeg_extract_frames(data_folder, video_file1):
     for img in imgs:
         assert re.search(r"-[0-9]+(.jpeg)$", img)
     rmtree(results)
+
+    frames = video1.extract_frames(results, format="raw", start=5, end=10)
+    assert frames.get_nb() == 5
+    imgs = glob(join(results, "*"))
+    assert len(imgs) == 5
+    for img in imgs:
+        assert re.search(r"-[0-9]+(.raw)$", img)
+    rmtree(results)

@@ -135,5 +135,5 @@ dmypy.json
 .idea
 
 backup/
-
 tests/data/
+pkg/
